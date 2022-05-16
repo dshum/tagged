@@ -4,37 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tagged</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 
 <!-- Navbar goes here -->
-<nav class="bg-white shadow-sm">
+<nav class="bg-white shadow-sm py-2">
     <div class="w-full px-4">
         <div class="flex justify-between">
-            <div class="">
-                <div>
-                    <!-- Website Logo -->
-                    <a href="#" class="flex items-center py-4">
-                        <span class="font-semibold text-black-600 text-lg">Tagged</span>
-                    </a>
-                </div>
+            <div class="flex bg-purple-300 text-white rounded-md">
+                <a href="#" class="py-2 px-2">
+                    <span class="font-medium">Tagged</span>
+                </a>
             </div>
-            <!-- Primary Navbar items -->
-            <div class="">
-                <div class="hidden md:flex items-center space-x-3">
-                    <a href="/" class="py-4 px-2 text-orange-500 border-b-4 border-orange-500 font-semibold">Home</a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-orange-500 transition duration-300">Services</a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-orange-500 transition duration-300">About</a>
-                    <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-orange-500 transition duration-300">Contact Us</a>
-                </div>
+
+            <div class="hidden md:flex w-1/4">
+                <form method="GET" class="w-full">
+                    <div class="relative w-full text-gray-600 focus-within:text-gray-400">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4">
+                            <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-4 h-4"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </button>
+                        </span>
+                        <input type="text" name="q" class="w-full py-2 pl-14 pr-4 bg-gray-100 rounded-md focus:outline-none focus:bg-white focus:text-gray-900" placeholder="Search" autocomplete="off">
+                    </div>
+                </form>
             </div>
-            <!-- Secondary Navbar items -->
-            <div class="hidden md:flex items-center space-x-3">
-                <a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-orange-500 hover:text-white transition duration-300">Log In</a>
-                <a href="" class="py-2 px-2 font-medium text-white bg-orange-500 rounded hover:bg-orange-400 transition duration-300">Sign Up</a>
+
+            <div class="hidden md:flex items-center space-x-3 text-sm">
+                <a href="" class="py-2 px-2 text-gray-500 rounded hover:bg-orange-500 hover:text-white transition duration-300">Log In</a>
+                <a href="" class="py-2 px-2 text-white bg-orange-500 rounded hover:bg-orange-400 transition duration-300">Sign Up</a>
             </div>
-            <!-- Mobile menu button -->
+
             <div class="md:hidden flex items-center">
                 <button class="outline-none mobile-menu-button">
                     <svg class="w-6 h-6 text-gray-500 hover:text-orange-500"
@@ -53,7 +55,6 @@
     </div>
 
     <div class="md:hidden hidden mobile-menu">
-        <h3>Menu</h3>
         <ul>
             <li class="active">
                 <a href="/" class="block text-sm px-4 py-4 text-white bg-orange-500 font-semibold">Home</a></li>
@@ -70,8 +71,7 @@
     </div>
 </nav>
 
-<div class="w-full md:w-1/6 hidden md:block mobile-menu">
-    <h3>Tags</h3>
+<div class="mt-4 w-full md:w-1/6 hidden md:block mobile-menu">
     <ul>
         <li class="active">
             <a href="/" class="block text-sm px-4 py-4 text-white bg-orange-500 font-semibold">All</a></li>
@@ -87,14 +87,14 @@
     </ul>
 </div>
 
-<h1 class="text-orange-500 text-2xl md:text-3xl lg:text-4xl font-bold p-4">Tailwind Navigation Toolbar</h1>
+<h1 class="text-orange-500 text-2xl md:text-3xl lg:text-4xl font-medium p-4">Tailwind Navigation Toolbar</h1>
 
 <script>
     const btn = document.querySelector("button.mobile-menu-button");
     const menu = document.querySelectorAll(".mobile-menu");
 
     btn.addEventListener("click", () => {
-        menu.forEach(function(item) {
+        menu.forEach(function (item) {
             item.classList.toggle("hidden");
         });
     });
