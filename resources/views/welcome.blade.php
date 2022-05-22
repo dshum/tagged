@@ -59,7 +59,7 @@
 </nav>
 
 <div class="flex mt-4 w-full space-x-4">
-    <div class="md:w-96 hidden md:block mobile-menu py-2 pl-0 pr-16 text-sm text-gray-700 font-medium">
+    <div class="md:w-96 hidden md:block mobile-menu py-2 pl-0 pr-8 text-sm text-gray-700 font-medium">
         <ul>
             <li class="active">
                 <a href="/" class="flex items-center space-x-4 bg-orange-100 rounded-tr-full rounded-br-full py-4 px-4">
@@ -100,9 +100,9 @@
         </ul>
     </div>
 
-    <div class="md:w-full py-2 px-24">
-        <div class="cards">
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-red-200">
+    <div class="w-full py-2 px-4 2xl:px-12">
+        <div class="cards min-w-64">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-red-200">
                 <h3 class="font-medium text-lg">Update empty customers.last_trade field</h3>
                 <div class="">
                     <p class="py-2">--Find customers + last trade date where last_trade is null --
@@ -117,7 +117,7 @@
                     <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
                 </div>
             </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-slate-300">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-slate-300">
                 <h3 class="font-medium text-lg">Count of indexes</h3>
                 <div class="max-h-96 text-ellipsis overflow-hidden">
                     <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
@@ -126,7 +126,7 @@
                     <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
                 </div>
             </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
                 <h3 class="font-medium text-lg">Count of indexes</h3>
                 <div class="max-h-96 text-ellipsis overflow-hidden">
                     <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
@@ -135,7 +135,7 @@
                     <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
                 </div>
             </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
                 <h3 class="font-medium text-lg">Count of indexes</h3>
                 <div class="max-h-96 text-ellipsis overflow-hidden">
                     <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
@@ -144,7 +144,7 @@
                     <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
                 </div>
             </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-yellow-200">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-yellow-200">
                 <h3 class="font-medium text-lg">Sunny days test task</h3>
                 <div class="">
                     <p class="py-2">Your task is to build one page web application. It will allow user to see length (in days) of continuous periods of sunshine in a given city:</p>
@@ -160,7 +160,31 @@
                     <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Laravel</div>
                 </div>
             </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-indigo-100">
+                <h3 class="font-medium text-lg">Об украинских и русских гласных / Хабр</h3>
+                <div class="max-h-96 text-ellipsis overflow-hidden">
+                    <p class="py-2">
+                        <a href="https://habr.com/ru/company/timeweb/blog/572428/">https://habr.com/ru/company/timeweb/blog/572428/</a>
+                    </p>
+                </div>
+                <div class="flex space-x-2 mt-2">
+                    <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Phone</div>
+                </div>
+            </div>
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-indigo-100">
+                <h3 class="font-medium text-lg">How to survive to a shipwreck</h3>
+                <div class="max-h-96 text-ellipsis overflow-hidden">
+                    <p class="py-2">
+                        <a href="https://www.bbvaopenmind.com/en/science/leading-figures/how-to-survive-in-the-event-of-shipwreck/">
+                            https://www.bbvaopenmind.com/en/science/leading-figures/how-to-survive-in-the-event-of-shipwreck/
+                        </a>
+                    </p>
+                </div>
+                <div class="flex space-x-2 mt-2">
+                    <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Phone</div>
+                </div>
+            </div>
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
                 <h3 class="font-medium text-lg">Count of indexes</h3>
                 <div class="max-h-96 text-ellipsis overflow-hidden">
                     <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
@@ -169,25 +193,7 @@
                     <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
                 </div>
             </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-green-200">
-                <h3 class="font-medium text-lg">Count of indexes</h3>
-                <div class="max-h-96 text-ellipsis overflow-hidden">
-                    <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
-                </div>
-                <div class="flex space-x-2 mt-2">
-                    <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
-                </div>
-            </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
-                <h3 class="font-medium text-lg">Count of indexes</h3>
-                <div class="max-h-96 text-ellipsis overflow-hidden">
-                    <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
-                </div>
-                <div class="flex space-x-2 mt-2">
-                    <div class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">Postgres</div>
-                </div>
-            </div>
-            <div class="max-h-128 w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
+            <div class="max-h-128 w-full lg:w-64 text-ellipsis overflow-hidden shadow-md hover:shadow-lg rounded-lg p-4 bg-white">
                 <h3 class="font-medium text-lg">Count of indexes</h3>
                 <div class="max-h-96 text-ellipsis overflow-hidden">
                     <p class="py-2">select count(*) from pg_indexes where tablename not like 'pg%';</p>
@@ -212,7 +218,7 @@
 
     let magicGrid = new MagicGrid({
         container: ".cards",
-        animate: true,
+        // animate: true,
         gutter: 30,
         static: true,
         useMin: true
