@@ -45,7 +45,7 @@
       </div>
 
       <div class="w-full py-2 px-4 2xl:px-12">
-        <div class="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-8 gap-4 min-w-64">
+        <div ref="scrolling" class="cards grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-6 gap-4 min-w-64">
           <Card v-for="note in notes" :note="note" @click="openNote(note)" />
         </div>
       </div>
@@ -68,6 +68,7 @@ import Card from './components/Card'
 export default {
   data() {
     return {
+      stopScroll: false,
       showBlock: false,
       showMobileMenu: true,
       showCards: false,
@@ -80,18 +81,31 @@ export default {
     Card
   },
   created() {
-    this.getNotes();
+    this.loadNotes();
   },
   mounted() {
-
+    window.addEventListener("scroll", this.handleScroll)
   },
   methods: {
-    getNotes() {
-      axios.get('/api/notes')
+    loadNotes() {
+      axios.get('/api/notes', {params: {skip: this.notes.length, take: 6}})
           .then(response => {
-            this.notes = response.data;
+            let notesLength = this.notes.length;
+            this.notes.push(...response.data)
+            if (notesLength === this.notes.length) {
+              this.stopScroll = true;
+            } else {
+              this.handleScroll();
+            }
           })
           .catch(error => console.log(error));
+    },
+    handleScroll() {
+      if (this.stopScroll) return;
+      const scrollComponent = this.$refs.scrolling;
+      if (scrollComponent.getBoundingClientRect().bottom < window.innerHeight) {
+        this.loadNotes();
+      }
     },
     openNote(note) {
       this.showBlock = true;

@@ -20,8 +20,13 @@ class NoteController extends Controller
     {
         // return $request->user()->notes()->orderBy('id', 'desc')->get();
 
+        $skip = $request->get('skip', 0);
+        $take = $request->get('take', 16);
+
         $notes = Note::with('tags')
             ->orderBy('id', 'desc')
+            ->skip($skip)
+            ->take($take)
             ->get();
 
         return response()->json($notes);
