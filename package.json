@@ -10,7 +10,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "axios": "^0.25",
+        "axios": "^0.25.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "magic-grid": "^3.2.4",
-        "vue": "^3.2.33",
+        "vue": "^3.2.35",
         "vue-router": "^4.0.15",
         "vue-template-compiler": "^2.6.14"
     }

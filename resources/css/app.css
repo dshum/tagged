@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .block-ui {
+        @apply fixed z-10 top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center transition duration-300;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .3s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+    }
+}

@@ -13,8 +13,17 @@ module.exports = {
             fontFamily: {
                 serif: ['Lora', ...defaultTheme.fontFamily.serif],
                 sans: ['WorkSans', ...defaultTheme.fontFamily.sans]
+            },
+            height: {
+                '128': '32rem',
+            },
+            maxHeight: {
+                '128': '32rem',
+            },
+            colors: {
+                'light-brown': '#f5deb3'
             }
-        },
+        }
     },
     plugins: [],
 }
