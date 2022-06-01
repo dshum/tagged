@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <div>
-      <transition name="fade">
-        <div :class="{[getCssClass(note.color)]: true, 'opacity-0': note.hide && ! active, 'shadow-lg': active, 'shadow-md hover:shadow-lg': ! active}" class="transition rounded-lg p-4">
-          <h3 class="font-medium text-lg">{{ note.name }}</h3>
-          <div class="max-h-128 text-ellipsis overflow-hidden py-2">
-            {{ note.body }}
-          </div>
-          <div class="flex space-x-2 mt-2">
-            <div v-for="tag in note.tags" class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">{{ tag.name }}</div>
-          </div>
-        </div>
-      </transition>
+  <div v-if="note">
+    <div :class="{[getCssClass(note.color)]: true, 'opacity-0': note.hide && ! active, 'shadow-lg': active, 'shadow-md hover:shadow-lg': ! active}" class="transition rounded-lg p-4">
+      <div class="font-medium text-lg">{{ note.name }}</div>
+      <div class="max-h-128 text-ellipsis overflow-hidden py-2">
+        {{ note.body }}
+      </div>
+      <div class="flex space-x-2 mt-2">
+        <div v-for="tag in note.tags" class="backdrop-grayscale-0 bg-black/10 rounded-full px-2 py-1 text-xs font-medium text-gray-800">{{ tag.name }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,11 +35,6 @@ export default {
         default: {name: 'White', class: 'bg-white'},
       }
     };
-  },
-  watch: {
-    note(val, oldVal) {
-      console.log(val, oldVal)
-    }
   },
   methods: {
     getCssClass(color = null) {

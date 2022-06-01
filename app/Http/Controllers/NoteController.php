@@ -20,13 +20,22 @@ class NoteController extends Controller
     {
         // return $request->user()->notes()->orderBy('id', 'desc')->get();
 
+        $tag = $request->get('tag');
         $skip = $request->get('skip', 0);
         $take = $request->get('take', 16);
 
-        $notes = Note::with('tags')
+        $notes = Note::query()
+            ->where(function ($query) use ($tag) {
+                if ($tag) {
+                    $query->whereHas('tags', function ($query) use ($tag) {
+                        $query->where('tags.name', $tag);
+                    });
+                }
+            })
             ->orderBy('id', 'desc')
             ->skip($skip)
             ->take($take)
+            ->with('tags')
             ->get();
 
         return response()->json($notes);

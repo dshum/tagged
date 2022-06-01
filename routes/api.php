@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['api'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
+    });
+
+    Route::controller(TagController::class)->group(function () {
+        Route::get('/tags', 'index');
     });
 
     Route::controller(NoteController::class)->group(function () {
